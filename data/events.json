@@ -1,0 +1,76 @@
+{
+  "$meta": {
+    "status": "PLACEHOLDER",
+    "note": "The college said it would supply sample event details, but none were in the tender pack. These six events are invented for layout only — replace with the college's sample events before the demo. Dates and weekdays are internally consistent (checked).",
+    "timezone": "Europe/London"
+  },
+  "eventTypes": [
+    { "id": "open-event", "label": "Open event", "badgeTone": "Purple" },
+    { "id": "taster-day", "label": "Taster day", "badgeTone": "Orange" },
+    { "id": "adult-learning", "label": "Adult learning", "badgeTone": "Green" },
+    { "id": "information", "label": "Information session", "badgeTone": "Blue" },
+    { "id": "parents-carers", "label": "Parents & carers", "badgeTone": "Neutral" },
+    { "id": "exhibition", "label": "Exhibition", "badgeTone": "Yellow" }
+  ],
+  "events": [
+    {
+      "id": 1, "slug": "open-evening-november-2026", "title": "Open Evening", "type": "open-event",
+      "start": "2026-11-18T16:00:00+00:00", "end": "2026-11-18T19:00:00+00:00",
+      "location": "Princes Road campus", "online": false, "cost": "Free",
+      "audience": "School leavers, parents and carers",
+      "summary": "Meet tutors, tour our workshops, salons and kitchens, and get advice on courses, apprenticeships and funding.",
+      "description": [
+        "Find out what it's like to study at Chelmsford College. Our tutors and current learners will be on hand to answer your questions.",
+        "You can tour our specialist facilities, talk to our Careers Advice Zone about the right course for you, and find out about financial support."
+      ],
+      "whatToExpect": ["Subject talks and tours", "Course and careers advice", "Information about bursaries and travel", "Apply on the night"],
+      "howToBook": "Booking is free but places are limited. Book online and we'll email your confirmation and parking details.",
+      "bookingUrl": null, "image": "/images/group-of-learners.jpg", "placeholder": true
+    },
+    {
+      "id": 2, "slug": "adult-learning-information-session", "title": "Adult Learning Information Session", "type": "adult-learning",
+      "start": "2026-11-26T18:00:00+00:00", "end": "2026-11-26T19:30:00+00:00",
+      "location": "Online", "online": true, "cost": "Free", "audience": "Adults aged 19+",
+      "summary": "Find out about part-time, evening and funded courses for adults.",
+      "description": ["A live online session covering courses for adults, funding and how to apply."],
+      "whatToExpect": ["Overview of adult courses", "Funding and fee support", "Live Q&A"],
+      "howToBook": "Book online to receive the joining link.", "bookingUrl": null, "image": "/images/students-learning.jpg", "placeholder": true
+    },
+    {
+      "id": 3, "slug": "hair-and-beauty-taster-day", "title": "Hair & Beauty Taster Day", "type": "taster-day",
+      "start": "2026-11-28T10:00:00+00:00", "end": "2026-11-28T13:00:00+00:00",
+      "location": "Princes Road campus", "online": false, "cost": "Free", "audience": "Year 10 and 11 students",
+      "summary": "Try hands-on hairdressing and beauty skills in our professional salons.",
+      "description": ["Spend a morning in our salons with our tutors and current learners."],
+      "whatToExpect": ["Practical salon sessions", "Meet tutors and learners", "Course advice"],
+      "howToBook": "Places are limited to 20 — book online.", "bookingUrl": null, "image": "/images/hairdressing.jpg", "placeholder": true
+    },
+    {
+      "id": 4, "slug": "apprenticeships-advice-evening", "title": "Apprenticeships Advice Evening", "type": "information",
+      "start": "2026-12-09T17:00:00+00:00", "end": "2026-12-09T19:00:00+00:00",
+      "location": "Princes Road campus", "online": false, "cost": "Free", "audience": "Learners, parents, carers and employers",
+      "summary": "Everything you need to know about earning while you learn.",
+      "description": ["Talk to our apprenticeships team and local employers about current vacancies and how apprenticeships work."],
+      "whatToExpect": ["How apprenticeships work", "Current vacancies", "Meet employers"],
+      "howToBook": "Book online.", "bookingUrl": null, "image": "/images/construction-plumbing.jpg", "placeholder": true
+    },
+    {
+      "id": 5, "slug": "parents-and-carers-qa", "title": "Parents & Carers Q&A", "type": "parents-carers",
+      "start": "2026-12-15T18:00:00+00:00", "end": "2026-12-15T19:00:00+00:00",
+      "location": "Online", "online": true, "cost": "Free", "audience": "Parents and carers",
+      "summary": "Ask our team about applications, support, fees and payments.",
+      "description": ["An online Q&A for parents and carers supporting a young person applying to college."],
+      "whatToExpect": ["Applications and interviews", "Learner support", "Paying fees and trips online"],
+      "howToBook": "Book online to receive the joining link.", "bookingUrl": null, "image": "/images/news-awards.jpg", "placeholder": true
+    },
+    {
+      "id": 6, "slug": "creative-arts-showcase", "title": "Creative Arts Showcase", "type": "exhibition",
+      "start": "2027-01-21T17:00:00+00:00", "end": "2027-01-21T20:00:00+00:00",
+      "location": "Princes Road campus", "online": false, "cost": "Free", "audience": "Everyone welcome",
+      "summary": "See fashion, graphic design and performing arts work by our learners.",
+      "description": ["An evening exhibition and catwalk showcasing work by our creative arts learners."],
+      "whatToExpect": ["Fashion catwalk", "Exhibition of learner work", "Meet tutors"],
+      "howToBook": "Free entry — booking recommended.", "bookingUrl": null, "image": "/images/fashion-textiles.jpg", "placeholder": true
+    }
+  ]
+}

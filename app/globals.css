@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@import "../design/tokens.css";
+@import "../design/tailwind-theme.css";
+
+:root {
+  --cc-font-heading: -apple-system, Arial, var(--font-inter), Times, sans-serif;
+  --cc-font-body: -apple-system, Arial, var(--font-inter), Times, sans-serif;
+}
+
+@layer base {
+  ::placeholder { color: var(--cc-color-text-secondary); }
+  *, ::before, ::after { border-color: var(--cc-color-border-subtle); }
+}

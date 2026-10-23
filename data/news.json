@@ -1,0 +1,32 @@
+{
+  "$meta": {
+    "status": "REAL",
+    "note": "Supplied by the college — replaces the earlier placeholder news item."
+  },
+  "news": [
+    {
+      "id": 1,
+      "slug": "bricklaying-competition-builds-industry-links",
+      "title": "Chelmsford College Bricklaying Competition Builds Industry Links",
+      "date": "2026-10-20",
+      "excerpt": "Chelmsford College's Level 2 Bricklaying students competed in a decorative brickwork challenge, supported by Chandler and Toolchimp.",
+      "image": "/images/news-bricklaying-competition.png"
+    },
+    {
+      "id": 2,
+      "slug": "how-volunteering-led-to-a-career-at-chelmsford-college",
+      "title": "How Volunteering Led to a Career at Chelmsford College",
+      "date": "2026-10-19",
+      "excerpt": "Chelmsford College launched its Staff Stories series, featuring Alice King and highlighting what makes the College unique for students.",
+      "image": "/images/news-staff-stories-alice-king.png"
+    },
+    {
+      "id": 3,
+      "slug": "t-level-students-engineer-a-solution-for-bricklaying-learners",
+      "title": "T Level Students Engineer a Solution for Bricklaying Learners at Chelmsford College",
+      "date": "2026-10-16",
+      "excerpt": "Chelmsford College celebrates T Levels Week 2026, showcasing Engineering students who designed and 3D printed spirit level holders.",
+      "image": "/images/news-t-level-engineering.png"
+    }
+  ]
+}

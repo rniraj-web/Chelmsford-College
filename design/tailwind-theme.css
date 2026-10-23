@@ -1,0 +1,205 @@
+/* Tailwind v4 theme for Chelmsford College — maps design/tokens.css (Figma variables) into Tailwind utilities.
+   Import order in app/globals.css:
+     @import "tailwindcss";
+     @import "../design/tokens.css";
+     @import "../design/tailwind-theme.css";
+   Tailwind's default colours, font sizes, radii, shadows and breakpoints are removed so only brand values exist. */
+
+@theme {
+  --color-*: initial;
+  --text-*: initial;
+  --radius-*: initial;
+  --shadow-*: initial;
+  --breakpoint-*: initial;
+}
+
+@theme inline {
+  /* Breakpoints (mobile first: unprefixed = 360px+). md = tablet, lg = desktop, xl = wide */
+  --breakpoint-md: 48rem;   /* 768px */
+  --breakpoint-lg: 64rem;   /* 1024px */
+  --breakpoint-xl: 90rem;   /* 1440px */
+
+  /* Spacing: Tailwind's default 0.25rem (4px) step already matches our 4px base.
+     Allowed steps only: 0 0.5 1 2 3 4 5 6 8 10 12 16 20 24 32 (= 0 2 4 8 12 16 20 24 32 40 48 64 80 96 128px). */
+
+  /* Containers → max-w-page, max-w-prose */
+  --container-page: var(--cc-container-max);
+  --container-prose: 45rem;
+
+  /* Fonts → font-heading, font-body (font-sans = body) */
+  --font-heading: var(--cc-font-heading);
+  --font-body: var(--cc-font-body);
+  --font-sans: var(--cc-font-body);
+
+  /* Background colours → bg-surface, bg-brand, bg-accent-subtle … */
+  --color-surface: var(--cc-color-bg-default);
+  --color-surface-subtle: var(--cc-color-bg-subtle);
+  --color-surface-muted: var(--cc-color-bg-muted);
+  --color-surface-hover: var(--cc-color-bg-hover);
+  --color-surface-disabled: var(--cc-color-bg-disabled);
+  --color-surface-inverse: var(--cc-color-bg-inverse);
+  --color-surface-inverse-hover: var(--cc-color-bg-inverse-hover);
+  --color-overlay: var(--cc-color-bg-overlay);
+  --color-overlay-light: var(--cc-color-bg-overlay-light);
+  --color-brand: var(--cc-color-bg-brand);
+  --color-brand-hover: var(--cc-color-bg-brand-hover);
+  --color-brand-pressed: var(--cc-color-bg-brand-pressed);
+  --color-brand-subtle: var(--cc-color-bg-brand-subtle);
+  --color-brand-strong: var(--cc-color-bg-brand-strong);
+  --color-accent: var(--cc-color-bg-accent);
+  --color-accent-hover: var(--cc-color-bg-accent-hover);
+  --color-accent-subtle: var(--cc-color-bg-accent-subtle);
+  --color-highlight: var(--cc-color-bg-highlight);
+  --color-highlight-subtle: var(--cc-color-bg-highlight-subtle);
+  --color-purple-subtle: var(--cc-color-bg-purple-subtle);
+  --color-orange-subtle: var(--cc-color-bg-orange-subtle);
+  --color-info-subtle: var(--cc-color-bg-info-subtle);
+  --color-success-subtle: var(--cc-color-bg-success-subtle);
+  --color-warning-subtle: var(--cc-color-bg-warning-subtle);
+  --color-error-subtle: var(--cc-color-bg-error-subtle);
+  --color-error: var(--cc-color-bg-error);
+
+  /* Text colours → text-fg, text-fg-secondary, text-fg-on-brand … (always use fg-* for text) */
+  --color-fg: var(--cc-color-text-primary);
+  --color-fg-secondary: var(--cc-color-text-secondary);
+  --color-fg-disabled: var(--cc-color-text-disabled);
+  --color-fg-inverse: var(--cc-color-text-inverse);
+  --color-fg-brand: var(--cc-color-text-brand);
+  --color-fg-link: var(--cc-color-text-link);
+  --color-fg-link-hover: var(--cc-color-text-link-hover);
+  --color-fg-accent: var(--cc-color-text-accent);
+  --color-fg-on-brand: var(--cc-color-text-on-brand);
+  --color-fg-on-accent: var(--cc-color-text-on-accent);
+  --color-fg-on-highlight: var(--cc-color-text-on-highlight);
+  --color-fg-info: var(--cc-color-text-info);
+  --color-fg-success: var(--cc-color-text-success);
+  --color-fg-warning: var(--cc-color-text-warning);
+  --color-fg-error: var(--cc-color-text-error);
+  --color-fg-purple: var(--cc-color-text-purple);
+  --color-fg-orange: var(--cc-color-text-orange);
+
+  /* Border colours → border-line, border-line-strong … */
+  --color-line: var(--cc-color-border-default);
+  --color-line-subtle: var(--cc-color-border-subtle);
+  --color-line-strong: var(--cc-color-border-strong);
+  --color-line-brand: var(--cc-color-border-brand);
+  --color-line-accent: var(--cc-color-border-accent);
+  --color-line-error: var(--cc-color-border-error);
+  --color-line-success: var(--cc-color-border-success);
+  --color-line-warning: var(--cc-color-border-warning);
+  --color-line-disabled: var(--cc-color-border-disabled);
+  --color-line-inverse: var(--cc-color-border-inverse);
+
+  /* Icon colours → text-icon-brand (Lucide uses currentColor) */
+  --color-icon: var(--cc-color-icon-primary);
+  --color-icon-secondary: var(--cc-color-icon-secondary);
+  --color-icon-brand: var(--cc-color-icon-brand);
+  --color-icon-accent: var(--cc-color-icon-accent);
+  --color-icon-inverse: var(--cc-color-icon-inverse);
+  --color-icon-success: var(--cc-color-icon-success);
+  --color-icon-warning: var(--cc-color-icon-warning);
+  --color-icon-error: var(--cc-color-icon-error);
+  --color-icon-info: var(--cc-color-icon-info);
+  --color-icon-disabled: var(--cc-color-icon-disabled);
+
+  /* Focus colours (prefer the focus-ring utility below) */
+  --color-focus-ring: var(--cc-color-focus-ring);
+  --color-focus-outline: var(--cc-color-focus-outline);
+
+  /* Two primitives used by Solid badges only */
+  --color-purple-600: var(--cc-purple-600);
+  --color-orange-500: var(--cc-orange-500);
+
+  /* Radius → rounded-sm, rounded-md, rounded-lg … */
+  --radius-xs: var(--cc-radius-xs);
+  --radius-sm: var(--cc-radius-sm);
+  --radius-md: var(--cc-radius-md);
+  --radius-lg: var(--cc-radius-lg);
+  --radius-xl: var(--cc-radius-xl);
+  --radius-2xl: var(--cc-radius-2xl);
+  --radius-full: var(--cc-radius-full);
+
+  /* Elevation → shadow-xs … shadow-xl */
+  --shadow-xs: var(--cc-shadow-xs);
+  --shadow-sm: var(--cc-shadow-sm);
+  --shadow-md: var(--cc-shadow-md);
+  --shadow-lg: var(--cc-shadow-lg);
+  --shadow-xl: var(--cc-shadow-xl);
+
+  /* Motion → ease-standard, ease-exit (durations: duration-120 / 200 / 320) */
+  --ease-standard: var(--cc-motion-ease-standard);
+  --ease-exit: var(--cc-motion-ease-exit);
+
+  /* Blur → backdrop-blur-header */
+  --blur-header: var(--cc-blur-backdrop);
+}
+
+/* ---------- Typography: one utility per Figma text style (sizes step up automatically at md/lg) ---------- */
+@utility type-display { font-family: var(--cc-font-heading); font-size: var(--cc-type-display-size); line-height: var(--cc-type-display-line); letter-spacing: var(--cc-type-display-tracking); font-weight: var(--cc-type-display-weight); }
+@utility type-h1 { font-family: var(--cc-font-heading); font-size: var(--cc-type-h1-size); line-height: var(--cc-type-h1-line); letter-spacing: var(--cc-type-h1-tracking); font-weight: var(--cc-type-h1-weight); }
+@utility type-h2 { font-family: var(--cc-font-heading); font-size: var(--cc-type-h2-size); line-height: var(--cc-type-h2-line); letter-spacing: var(--cc-type-h2-tracking); font-weight: var(--cc-type-h2-weight); }
+@utility type-h3 { font-family: var(--cc-font-heading); font-size: var(--cc-type-h3-size); line-height: var(--cc-type-h3-line); letter-spacing: var(--cc-type-h3-tracking); font-weight: var(--cc-type-h3-weight); }
+@utility type-h4 { font-family: var(--cc-font-heading); font-size: var(--cc-type-h4-size); line-height: var(--cc-type-h4-line); letter-spacing: var(--cc-type-h4-tracking); font-weight: var(--cc-type-h4-weight); }
+@utility type-h5 { font-family: var(--cc-font-heading); font-size: var(--cc-type-h5-size); line-height: var(--cc-type-h5-line); letter-spacing: var(--cc-type-h5-tracking); font-weight: var(--cc-type-h5-weight); }
+@utility type-h6 { font-family: var(--cc-font-heading); font-size: var(--cc-type-h6-size); line-height: var(--cc-type-h6-line); letter-spacing: var(--cc-type-h6-tracking); font-weight: var(--cc-type-h6-weight); }
+@utility type-body-xl { font-family: var(--cc-font-body); font-size: var(--cc-type-body-xl-size); line-height: var(--cc-type-body-xl-line); font-weight: var(--cc-type-body-xl-weight); }
+@utility type-body-l { font-family: var(--cc-font-body); font-size: var(--cc-type-body-l-size); line-height: var(--cc-type-body-l-line); font-weight: var(--cc-type-body-l-weight); }
+@utility type-body-m { font-family: var(--cc-font-body); font-size: var(--cc-type-body-m-size); line-height: var(--cc-type-body-m-line); font-weight: var(--cc-type-body-m-weight); }
+@utility type-body-m-strong { font-family: var(--cc-font-body); font-size: var(--cc-type-body-m-strong-size); line-height: var(--cc-type-body-m-strong-line); font-weight: var(--cc-type-body-m-strong-weight); }
+@utility type-body-s { font-family: var(--cc-font-body); font-size: var(--cc-type-body-s-size); line-height: var(--cc-type-body-s-line); font-weight: var(--cc-type-body-s-weight); }
+@utility type-body-s-strong { font-family: var(--cc-font-body); font-size: var(--cc-type-body-s-strong-size); line-height: var(--cc-type-body-s-strong-line); font-weight: var(--cc-type-body-s-strong-weight); }
+@utility type-label-l { font-family: var(--cc-font-body); font-size: var(--cc-type-label-l-size); line-height: var(--cc-type-label-l-line); letter-spacing: var(--cc-type-label-l-tracking); font-weight: var(--cc-type-label-l-weight); }
+@utility type-label-m { font-family: var(--cc-font-body); font-size: var(--cc-type-label-m-size); line-height: var(--cc-type-label-m-line); letter-spacing: var(--cc-type-label-m-tracking); font-weight: var(--cc-type-label-m-weight); }
+@utility type-label-s { font-family: var(--cc-font-body); font-size: var(--cc-type-label-s-size); line-height: var(--cc-type-label-s-line); letter-spacing: var(--cc-type-label-s-tracking); font-weight: var(--cc-type-label-s-weight); }
+@utility type-button-l { font-family: var(--cc-font-body); font-size: var(--cc-type-button-l-size); line-height: var(--cc-type-button-l-line); font-weight: var(--cc-type-button-l-weight); }
+@utility type-button-m { font-family: var(--cc-font-body); font-size: var(--cc-type-button-m-size); line-height: var(--cc-type-button-m-line); font-weight: var(--cc-type-button-m-weight); }
+@utility type-link-m { font-family: var(--cc-font-body); font-size: var(--cc-type-link-m-size); line-height: var(--cc-type-link-m-line); font-weight: var(--cc-type-link-m-weight); text-decoration-line: underline; text-underline-offset: 0.15em; }
+@utility type-link-s { font-family: var(--cc-font-body); font-size: var(--cc-type-link-s-size); line-height: var(--cc-type-link-s-line); font-weight: var(--cc-type-link-s-weight); text-decoration-line: underline; text-underline-offset: 0.15em; }
+@utility type-overline { font-family: var(--cc-font-body); font-size: var(--cc-type-overline-size); line-height: var(--cc-type-overline-line); letter-spacing: var(--cc-type-overline-tracking); font-weight: var(--cc-type-overline-weight); text-transform: uppercase; }
+@utility type-caption { font-family: var(--cc-font-body); font-size: var(--cc-type-caption-size); line-height: var(--cc-type-caption-line); letter-spacing: var(--cc-type-caption-tracking); font-weight: var(--cc-type-caption-weight); }
+@utility type-quote { font-family: var(--cc-font-heading); font-size: var(--cc-type-quote-size); line-height: var(--cc-type-quote-line); font-weight: var(--cc-type-quote-weight); font-style: italic; }
+@utility type-stat { font-family: var(--cc-font-heading); font-size: var(--cc-type-stat-size); line-height: var(--cc-type-stat-line); letter-spacing: var(--cc-type-stat-tracking); font-weight: var(--cc-type-stat-weight); font-variant-numeric: tabular-nums; }
+@utility type-date-day { font-family: var(--cc-font-heading); font-size: var(--cc-type-date-day-size); line-height: var(--cc-type-date-day-line); letter-spacing: var(--cc-type-date-day-tracking); font-weight: var(--cc-type-date-day-weight); font-variant-numeric: tabular-nums; }
+
+/* ---------- Component sizing: control/target sizes that don't land on the spacing step list (→ design/tokens.css sizes) ---------- */
+@utility size-control-sm { width: var(--cc-size-control-sm); height: var(--cc-size-control-sm); }
+@utility h-control-lg { height: var(--cc-size-control-lg); }
+@utility size-control-lg { width: var(--cc-size-control-lg); height: var(--cc-size-control-lg); }
+@utility size-target-sm { width: var(--cc-size-target-sm); height: var(--cc-size-target-sm); }
+@utility h-target-sm { height: var(--cc-size-target-sm); }
+@utility border-b-3 { border-bottom-width: var(--cc-border-width-3); }
+@utility h-media-card { height: var(--cc-size-media-card); }
+@utility w-media-card-wide { width: var(--cc-size-media-card-wide); }
+@utility h-hero { height: var(--cc-size-hero); }
+@utility w-sidebar { width: var(--cc-size-sidebar); }
+
+/* ---------- Layout: values switch automatically at md / lg ---------- */
+@utility container-page { width: 100%; max-width: calc(var(--cc-container-max) + 2 * var(--cc-page-margin)); margin-inline: auto; padding-inline: var(--cc-page-margin); }
+@utility section-y { padding-block: var(--cc-section-padding); }
+@utility gap-gutter { gap: var(--cc-grid-gutter); }
+
+/* ---------- Focus (WCAG 2.2): use as focus-visible:focus-ring. Transparent outline keeps it visible in Windows forced-colours mode. ---------- */
+@utility focus-ring { outline: 3px solid transparent; outline-offset: 2px; box-shadow: var(--cc-focus-ring); }
+@utility focus-highlight { outline: 3px solid transparent; background-color: var(--cc-color-focus-ring); color: var(--cc-color-focus-outline); text-decoration-line: none; box-shadow: inset 0 -3px 0 var(--cc-color-focus-outline); }
+
+/* ---------- Gradients & overlays ---------- */
+@utility bg-gradient-brand { background-image: var(--cc-gradient-brand); }
+@utility bg-gradient-brand-deep { background-image: var(--cc-gradient-brand-deep); }
+@utility bg-overlay-hero-left { background-image: var(--cc-gradient-overlay-hero-left); }
+@utility bg-overlay-hero-bottom { background-image: var(--cc-gradient-overlay-hero-bottom); }
+
+/* ---------- Marquee (home "Upcoming events" strip only): the one deliberate exception to "no autoplay/looping animation" in CLAUDE.md, approved for this section only.
+   Pauses on hover/focus (below) and is neutralised by the reduced-motion rule below (animation-iteration-count: 1). The duplicated track half must be marked `inert` in markup so it's not reachable by keyboard/AT. ---------- */
+@keyframes marquee-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@utility animate-marquee { animation: marquee-x 28s linear infinite; }
+.animate-marquee:hover, .animate-marquee:focus-within { animation-play-state: paused; }
+.marquee-mask { mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); }
+
+/* ---------- Reduced motion: Tailwind durations are fixed ms values, so switch them off globally (WCAG 2.3.3, AAA best practice). Motion's <MotionConfig reducedMotion="user"> covers JS animation. ---------- */
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  }
+}
+
+/* ---------- Visually hidden (e.g. search label) is Tailwind's built-in `sr-only` ---------- */

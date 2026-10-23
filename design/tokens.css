@@ -1,0 +1,411 @@
+/* Chelmsford College design tokens — generated from the Figma design system (file wX8hihLziWk7OPkSPaUY1g).
+   Names match the Figma variables' code syntax, so Figma Dev Mode and code agree.
+   Mobile-first: base values are mobile; type sizes step up at 768px and 1024px. */
+
+:root {
+  /* Primitive colours — do not use directly in components; use semantic tokens below */
+  --cc-blue-50: #e8f4fb;
+  --cc-blue-100: #cce6f5;
+  --cc-blue-200: #99cdeb;
+  --cc-blue-300: #66b4e1;
+  --cc-blue-400: #339bd6;
+  --cc-blue-500: #007ac5;
+  --cc-blue-600: #00639f;
+  --cc-blue-700: #004e7e;
+  --cc-blue-800: #003b5f;
+  --cc-blue-900: #002840;
+  --cc-blue-950: #001a2b;
+  --cc-green-50: #f1f9ea;
+  --cc-green-100: #dff1cf;
+  --cc-green-200: #c3e5a4;
+  --cc-green-300: #a5d679;
+  --cc-green-400: #8ecb59;
+  --cc-green-500: #7bc242;
+  --cc-green-600: #5e9e2c;
+  --cc-green-700: #467a1f;
+  --cc-green-800: #335a16;
+  --cc-green-900: #213a0f;
+  --cc-neutral-0: #ffffff;
+  --cc-neutral-50: #f5f7fa;
+  --cc-neutral-100: #ebeff4;
+  --cc-neutral-200: #dce2e9;
+  --cc-neutral-300: #c2cbd5;
+  --cc-neutral-400: #98a4b3;
+  --cc-neutral-500: #6a7787;
+  --cc-neutral-600: #4d5968;
+  --cc-neutral-700: #374352;
+  --cc-neutral-800: #232d3b;
+  --cc-neutral-900: #131b26;
+  --cc-neutral-950: #0a0f17;
+  --cc-yellow-50: #fff9e6;
+  --cc-yellow-100: #fff0bf;
+  --cc-yellow-200: #ffe38a;
+  --cc-yellow-300: #ffd65c;
+  --cc-yellow-400: #ffc72c;
+  --cc-yellow-500: #f0b400;
+  --cc-yellow-600: #c79400;
+  --cc-yellow-700: #9a7100;
+  --cc-yellow-800: #6e5000;
+  --cc-yellow-900: #453200;
+  --cc-purple-50: #f4effb;
+  --cc-purple-100: #e6dcf6;
+  --cc-purple-200: #cdb9ec;
+  --cc-purple-300: #b096e0;
+  --cc-purple-400: #8f6bcf;
+  --cc-purple-500: #6e3fb0;
+  --cc-purple-600: #5c3396;
+  --cc-purple-700: #4a287a;
+  --cc-purple-800: #371e5b;
+  --cc-purple-900: #25143d;
+  --cc-orange-50: #fff3ec;
+  --cc-orange-100: #ffe1cf;
+  --cc-orange-200: #ffc29f;
+  --cc-orange-300: #ffa36f;
+  --cc-orange-400: #f7853f;
+  --cc-orange-500: #eb6a1e;
+  --cc-orange-600: #c85512;
+  --cc-orange-700: #a3420d;
+  --cc-orange-800: #7a310a;
+  --cc-orange-900: #4f1f06;
+  --cc-red-50: #fdeded;
+  --cc-red-100: #fad4d4;
+  --cc-red-200: #f3a9a9;
+  --cc-red-300: #eb7a7a;
+  --cc-red-400: #e04e4e;
+  --cc-red-500: #d12f2f;
+  --cc-red-600: #b71c1c;
+  --cc-red-700: #8e1414;
+  --cc-red-800: #680e0e;
+  --cc-red-900: #430909;
+  --cc-alpha-scrim-64: rgb(10 15 23 / 0.64);
+  --cc-alpha-scrim-40: rgb(10 15 23 / 0.4);
+  --cc-alpha-white-16: rgb(255 255 255 / 0.16);
+  --cc-alpha-shadow-12: rgb(10 15 23 / 0.12);
+
+  /* Semantic colour — bg */
+  --cc-color-bg-default: var(--cc-neutral-0); /* Page & card surfaces */
+  --cc-color-bg-subtle: var(--cc-neutral-50); /* Alternate section bands */
+  --cc-color-bg-muted: var(--cc-neutral-100); /* Wells, input fills */
+  --cc-color-bg-hover: var(--cc-neutral-100); /* Ghost/list hover */
+  --cc-color-bg-brand: var(--cc-blue-500); /* Primary buttons, brand bands */
+  --cc-color-bg-brand-hover: var(--cc-blue-600); /* Primary button hover */
+  --cc-color-bg-brand-pressed: var(--cc-blue-700); /* Primary button pressed */
+  --cc-color-bg-brand-subtle: var(
+    --cc-blue-50
+  ); /* Info panels, selected rows */
+  --cc-color-bg-brand-strong: var(
+    --cc-blue-900
+  ); /* Header bands, footer, dark heroes */
+  --cc-color-bg-accent: var(
+    --cc-green-500
+  ); /* Accent buttons, highlights (ink text only) */
+  --cc-color-bg-accent-hover: var(--cc-green-600); /* Accent hover */
+  --cc-color-bg-accent-subtle: var(--cc-green-50); /* Success-tinted panels */
+  --cc-color-bg-highlight: var(--cc-yellow-400); /* Campaign flashes, offers */
+  --cc-color-bg-highlight-subtle: var(--cc-yellow-50); /* Notices */
+  --cc-color-bg-purple-subtle: var(--cc-purple-50); /* Tag tone */
+  --cc-color-bg-orange-subtle: var(--cc-orange-50); /* Tag tone */
+  --cc-color-bg-info-subtle: var(--cc-blue-50); /* Info alert */
+  --cc-color-bg-success-subtle: var(--cc-green-50); /* Success alert */
+  --cc-color-bg-warning-subtle: var(--cc-yellow-50); /* Warning alert */
+  --cc-color-bg-error-subtle: var(--cc-red-50); /* Error alert */
+  --cc-color-bg-error: var(--cc-red-600); /* Error badge */
+  --cc-color-bg-disabled: var(--cc-neutral-100); /* Disabled controls */
+  --cc-color-bg-inverse: var(--cc-neutral-900); /* Tooltips, dark chips */
+  --cc-color-bg-inverse-hover: var(
+    --cc-alpha-white-16
+  ); /* Hover on dark surfaces */
+  --cc-color-bg-overlay: var(--cc-alpha-scrim-64); /* Modal / drawer scrim */
+  --cc-color-bg-overlay-light: var(--cc-alpha-scrim-40); /* Image scrim */
+
+  /* Semantic colour — text */
+  --cc-color-text-primary: var(--cc-neutral-900); /* Headings & body */
+  --cc-color-text-secondary: var(--cc-neutral-600); /* Supporting copy, meta */
+  --cc-color-text-disabled: var(--cc-neutral-400); /* Disabled labels */
+  --cc-color-text-inverse: var(--cc-neutral-0); /* Text on dark/brand */
+  --cc-color-text-brand: var(--cc-blue-600); /* Brand-coloured text */
+  --cc-color-text-link: var(--cc-blue-600); /* Links */
+  --cc-color-text-link-hover: var(--cc-blue-800); /* Link hover */
+  --cc-color-text-accent: var(--cc-green-700); /* Green text on white */
+  --cc-color-text-on-brand: var(--cc-neutral-0); /* Text on Blue */
+  --cc-color-text-on-accent: var(--cc-neutral-900); /* Text on Green */
+  --cc-color-text-on-highlight: var(--cc-neutral-900); /* Text on Yellow */
+  --cc-color-text-info: var(--cc-blue-700); /* Info message */
+  --cc-color-text-success: var(--cc-green-700); /* Success message */
+  --cc-color-text-warning: var(--cc-yellow-800); /* Warning message */
+  --cc-color-text-error: var(--cc-red-700); /* Error message */
+  --cc-color-text-purple: var(--cc-purple-700); /* Purple tag text */
+  --cc-color-text-orange: var(--cc-orange-700); /* Orange tag text */
+
+  /* Semantic colour — border */
+  --cc-color-border-subtle: var(--cc-neutral-200); /* Dividers, card outlines */
+  --cc-color-border-default: var(--cc-neutral-300); /* Decorative borders */
+  --cc-color-border-strong: var(--cc-neutral-500); /* Form controls (>=3:1) */
+  --cc-color-border-brand: var(--cc-blue-500); /* Selected / active */
+  --cc-color-border-accent: var(--cc-green-500); /* Accent rules */
+  --cc-color-border-error: var(--cc-red-600); /* Error fields */
+  --cc-color-border-success: var(--cc-green-700); /* Success fields */
+  --cc-color-border-warning: var(--cc-yellow-600); /* Warning outlines */
+  --cc-color-border-disabled: var(--cc-neutral-200); /* Disabled controls */
+  --cc-color-border-inverse: var(--cc-neutral-0); /* Borders on dark */
+
+  /* Semantic colour — icon */
+  --cc-color-icon-primary: var(--cc-neutral-900); /* Default icons */
+  --cc-color-icon-secondary: var(--cc-neutral-600); /* Supporting icons */
+  --cc-color-icon-brand: var(--cc-blue-500); /* Brand icons */
+  --cc-color-icon-accent: var(--cc-green-700); /* Accent icons */
+  --cc-color-icon-inverse: var(--cc-neutral-0); /* Icons on dark */
+  --cc-color-icon-success: var(--cc-green-700); /* Success */
+  --cc-color-icon-warning: var(--cc-yellow-700); /* Warning */
+  --cc-color-icon-error: var(--cc-red-600); /* Error */
+  --cc-color-icon-info: var(--cc-blue-600); /* Info */
+  --cc-color-icon-disabled: var(--cc-neutral-400); /* Disabled */
+
+  /* Semantic colour — focus */
+  --cc-color-focus-ring: var(
+    --cc-yellow-400
+  ); /* Focus indicator inner 3px band */
+  --cc-color-focus-outline: var(
+    --cc-neutral-950
+  ); /* Focus indicator outer 2px band */
+
+  /* Spacing (4px base) */
+  --cc-space-0: 0rem;
+  --cc-space-2: 0.125rem;
+  --cc-space-4: 0.25rem;
+  --cc-space-8: 0.5rem;
+  --cc-space-12: 0.75rem;
+  --cc-space-16: 1rem;
+  --cc-space-20: 1.25rem;
+  --cc-space-24: 1.5rem;
+  --cc-space-32: 2rem;
+  --cc-space-40: 2.5rem;
+  --cc-space-48: 3rem;
+  --cc-space-64: 4rem;
+  --cc-space-80: 5rem;
+  --cc-space-96: 6rem;
+  --cc-space-128: 8rem;
+
+  /* Radius */
+  --cc-radius-none: 0px;
+  --cc-radius-xs: 2px;
+  --cc-radius-sm: 4px;
+  --cc-radius-md: 8px;
+  --cc-radius-lg: 12px;
+  --cc-radius-xl: 16px;
+  --cc-radius-2xl: 24px;
+  --cc-radius-full: 999px;
+
+  /* Border width & sizes */
+  --cc-border-width-1: 1px;
+  --cc-border-width-2: 2px;
+  --cc-border-width-3: 3px;
+  --cc-size-icon-sm: 1rem;
+  --cc-size-icon-md: 1.25rem;
+  --cc-size-icon-lg: 1.5rem;
+  --cc-size-icon-xl: 2rem;
+  --cc-size-control-sm: 2.5rem;
+  --cc-size-control-md: 3rem;
+  --cc-size-control-lg: 3.5rem;
+  --cc-size-target-min: 1.5rem;
+  --cc-size-target-sm: 2.75rem;
+
+  /* Typography */
+  --cc-font-heading: -apple-system, Arial, "Inter", Times, sans-serif;
+  --cc-font-body: -apple-system, Arial, "Inter", Times, sans-serif;
+  --cc-type-display-size: 2.5rem;
+  --cc-type-display-line: 1.2;
+  --cc-type-display-tracking: -1px;
+  --cc-type-display-weight: 800;
+  --cc-type-h1-size: 2rem;
+  --cc-type-h1-line: 1.25;
+  --cc-type-h1-tracking: -0.5px;
+  --cc-type-h1-weight: 700;
+  --cc-type-h2-size: 1.625rem;
+  --cc-type-h2-line: 1.308;
+  --cc-type-h2-tracking: -0.25px;
+  --cc-type-h2-weight: 700;
+  --cc-type-h3-size: 1.375rem;
+  --cc-type-h3-line: 1.364;
+  --cc-type-h3-tracking: 0px;
+  --cc-type-h3-weight: 700;
+  --cc-type-h4-size: 1.25rem;
+  --cc-type-h4-line: 1.4;
+  --cc-type-h4-tracking: 0px;
+  --cc-type-h4-weight: 700;
+  --cc-type-h5-size: 1.125rem;
+  --cc-type-h5-line: 1.444;
+  --cc-type-h5-tracking: 0px;
+  --cc-type-h5-weight: 700;
+  --cc-type-h6-size: 1rem;
+  --cc-type-h6-line: 1.5;
+  --cc-type-h6-tracking: 0px;
+  --cc-type-h6-weight: 700;
+  --cc-type-body-xl-size: 1.25rem;
+  --cc-type-body-xl-line: 1.6;
+  --cc-type-body-xl-tracking: 0px;
+  --cc-type-body-xl-weight: 400;
+  --cc-type-body-l-size: 1.125rem;
+  --cc-type-body-l-line: 1.556;
+  --cc-type-body-l-tracking: 0px;
+  --cc-type-body-l-weight: 400;
+  --cc-type-body-m-size: 1rem;
+  --cc-type-body-m-line: 1.5;
+  --cc-type-body-m-tracking: 0px;
+  --cc-type-body-m-weight: 400;
+  --cc-type-body-m-strong-size: 1rem;
+  --cc-type-body-m-strong-line: 1.5;
+  --cc-type-body-m-strong-tracking: 0px;
+  --cc-type-body-m-strong-weight: 600;
+  --cc-type-body-s-size: 0.875rem;
+  --cc-type-body-s-line: 1.429;
+  --cc-type-body-s-tracking: 0px;
+  --cc-type-body-s-weight: 400;
+  --cc-type-body-s-strong-size: 0.875rem;
+  --cc-type-body-s-strong-line: 1.429;
+  --cc-type-body-s-strong-tracking: 0px;
+  --cc-type-body-s-strong-weight: 600;
+  --cc-type-label-l-size: 1rem;
+  --cc-type-label-l-line: 1.5;
+  --cc-type-label-l-tracking: 0px;
+  --cc-type-label-l-weight: 600;
+  --cc-type-label-m-size: 0.875rem;
+  --cc-type-label-m-line: 1.429;
+  --cc-type-label-m-tracking: 0.1px;
+  --cc-type-label-m-weight: 600;
+  --cc-type-label-s-size: 0.75rem;
+  --cc-type-label-s-line: 1.333;
+  --cc-type-label-s-tracking: 0.2px;
+  --cc-type-label-s-weight: 600;
+  --cc-type-button-l-size: 1.125rem;
+  --cc-type-button-l-line: 1.333;
+  --cc-type-button-l-tracking: 0px;
+  --cc-type-button-l-weight: 600;
+  --cc-type-button-m-size: 1rem;
+  --cc-type-button-m-line: 1.5;
+  --cc-type-button-m-tracking: 0px;
+  --cc-type-button-m-weight: 600;
+  --cc-type-link-m-size: 1rem;
+  --cc-type-link-m-line: 1.5;
+  --cc-type-link-m-tracking: 0px;
+  --cc-type-link-m-weight: 600;
+  --cc-type-link-s-size: 0.875rem;
+  --cc-type-link-s-line: 1.429;
+  --cc-type-link-s-tracking: 0px;
+  --cc-type-link-s-weight: 600;
+  --cc-type-overline-size: 0.8125rem;
+  --cc-type-overline-line: 1.231;
+  --cc-type-overline-tracking: 1.2px;
+  --cc-type-overline-weight: 700;
+  --cc-type-caption-size: 0.75rem;
+  --cc-type-caption-line: 1.333;
+  --cc-type-caption-tracking: 0.2px;
+  --cc-type-caption-weight: 400;
+  --cc-type-quote-size: 1.5rem;
+  --cc-type-quote-line: 1.5;
+  --cc-type-quote-tracking: 0px;
+  --cc-type-quote-weight: 500;
+  --cc-type-stat-size: 3rem;
+  --cc-type-stat-line: 1.083;
+  --cc-type-stat-tracking: -1px;
+  --cc-type-stat-weight: 800;
+  --cc-type-date-day-size: 1.75rem;
+  --cc-type-date-day-line: 1.143;
+  --cc-type-date-day-tracking: -0.5px;
+  --cc-type-date-day-weight: 800;
+
+  /* Elevation & focus */
+  --cc-shadow-xs: 0 1px 2px 0px rgb(10 15 23 / 0.06);
+  --cc-shadow-sm:
+    0 1px 3px 0px rgb(10 15 23 / 0.1), 0 1px 2px -1px rgb(10 15 23 / 0.06);
+  --cc-shadow-md:
+    0 4px 8px -2px rgb(10 15 23 / 0.1), 0 2px 4px -2px rgb(10 15 23 / 0.06);
+  --cc-shadow-lg:
+    0 12px 16px -4px rgb(10 15 23 / 0.1), 0 4px 6px -2px rgb(10 15 23 / 0.05);
+  --cc-shadow-xl:
+    0 20px 24px -4px rgb(10 15 23 / 0.12), 0 8px 8px -4px rgb(10 15 23 / 0.04);
+  --cc-focus-ring:
+    0 0 0 3px var(--cc-color-focus-ring),
+    0 0 0 5px var(--cc-color-focus-outline);
+  --cc-blur-backdrop: 16px;
+
+  /* Gradients & image overlays */
+  --cc-gradient-brand: linear-gradient(135deg, #007ac5 0%, #7bc242 100%);
+  --cc-gradient-brand-deep: linear-gradient(135deg, #002840 0%, #007ac5 100%);
+  --cc-gradient-overlay-hero-left: linear-gradient(
+    90deg,
+    rgb(0 26 43 / 0.9) 10%,
+    rgb(0 26 43 / 0.7) 50%,
+    rgb(0 26 43 / 0.25) 80%,
+    rgb(0 26 43 / 0) 100%
+  );
+  --cc-gradient-overlay-hero-bottom: linear-gradient(
+    180deg,
+    rgb(0 26 43 / 0) 0%,
+    rgb(0 26 43 / 0.6) 45%,
+    rgb(0 26 43 / 0.92) 100%
+  );
+
+  /* Motion */
+  --cc-motion-duration-fast: 120ms;
+  --cc-motion-duration-base: 200ms;
+  --cc-motion-duration-slow: 320ms;
+  --cc-motion-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --cc-motion-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Layout (mobile) */
+  --cc-container-max: 1280px;
+  --cc-page-margin: var(--cc-space-16);
+  --cc-grid-gutter: var(--cc-space-16);
+  --cc-section-padding: var(--cc-space-48);
+
+  /* Media sizes: card image crops and the Hero banner — not on the 4px spacing scale, so kept as their own tokens */
+  --cc-size-media-card: 13.5rem; /* 216px — CourseCard / EventCard vertical image */
+  --cc-size-media-card-wide: 17.5rem; /* 280px — CourseCard horizontal image */
+  --cc-size-hero: 27.5rem; /* 440px mobile */
+  --cc-size-sidebar: 16rem; /* 256px — /courses desktop filters sidebar */
+}
+
+@media (min-width: 768px) {
+  :root {
+    --cc-type-display-size: 3.25rem;
+    --cc-type-display-line: 1.154;
+    --cc-type-display-tracking: -1.25px;
+    --cc-page-margin: var(--cc-space-32);
+    --cc-grid-gutter: var(--cc-space-24);
+    --cc-section-padding: var(--cc-space-64);
+    --cc-size-hero: 35rem; /* 560px tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --cc-type-display-size: 4rem;
+    --cc-type-display-line: 1.125;
+    --cc-type-display-tracking: -1.5px;
+    --cc-type-h1-size: 3rem;
+    --cc-type-h1-line: 1.167;
+    --cc-type-h1-tracking: -1px;
+    --cc-type-h2-size: 2.25rem;
+    --cc-type-h2-line: 1.222;
+    --cc-type-h2-tracking: -0.5px;
+    --cc-type-h3-size: 1.75rem;
+    --cc-type-h3-line: 1.286;
+    --cc-type-h3-tracking: -0.25px;
+    --cc-type-h4-size: 1.375rem;
+    --cc-type-h4-line: 1.364;
+    --cc-type-h4-tracking: 0px;
+    --cc-page-margin: var(--cc-space-80);
+    --cc-grid-gutter: var(--cc-space-24);
+    --cc-section-padding: var(--cc-space-96);
+    --cc-size-hero: 40rem; /* 640px desktop */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --cc-motion-duration-fast: 0ms;
+    --cc-motion-duration-base: 0ms;
+    --cc-motion-duration-slow: 0ms;
+  }
+}
