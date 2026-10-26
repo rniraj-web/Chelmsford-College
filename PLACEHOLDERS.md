@@ -33,3 +33,8 @@ Added while building the payment journey (Phase 6):
 - **"Download receipt (PDF)"** triggers the browser's print dialog (`window.print()`) rather than generating a real PDF — a working, dependency-free stand-in until a provider-generated receipt exists.
 - **VISA / MASTERCARD / AMEX badges** on `components/PaymentForm.tsx` are illustrative chrome, not a confirmed list of accepted card schemes — no payment provider has been chosen yet (per the brief), so this shouldn't be read as a commitment.
 - **Apple Pay / Google Pay tabs** on `components/PaymentForm.tsx` are visual mocks only — no Apple Pay JS / Google Pay API integration (both require a live merchant account and HTTPS production domain). Clicking either "Pay" button advances the mock flow exactly like the card form; no wallet sheet actually opens. Generic icons are used throughout rather than the real Apple/Google Pay marks.
+
+Added while building the course detail page (Phase 7):
+
+- **"Apply now" / "Download course guide" / "Book an open event" links** on `app/courses/[slug]/page.tsx` (`KeyFactsPanel`, `StickyApplyBar`, and the inline button) all point to `#` — the college hasn't supplied an application system, course guide downloads, or an events-specific landing page for this CTA. "Book an open event" currently links to `/events` as the closest real destination.
+- **Related courses** (same page) are filtered by `derived.subject`, which `docs/data.md` already flags as an assumed grouping of `sectionId`, not a college-confirmed taxonomy — confirm subject names with the college before launch.

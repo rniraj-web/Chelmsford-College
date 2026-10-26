@@ -2,12 +2,10 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronLeft } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ProgressStepper } from "@/components/ProgressStepper";
 import { OrderSummary } from "@/components/OrderSummary";
 import { PaymentForm } from "@/components/PaymentForm";
-import { Button } from "@/components/Button";
 import { PayHelp } from "@/components/PayHelp";
 import { getCourseById } from "@/lib/courses";
 import { usePayment } from "../payment-context";
@@ -49,6 +47,7 @@ export default function PayReviewPage() {
         items={[
           { href: "/", label: "Home" },
           { href: "/pay", label: "Pay a fee" },
+          { href: "/pay/details", label: "Your details" },
           { href: "/pay/review", label: "Review & pay" },
         ]}
       />
@@ -74,10 +73,6 @@ export default function PayReviewPage() {
               <PaymentForm amountLabel={amountLabel} onSubmit={handlePay} />
             </div>
           </div>
-
-          <Button href="/pay/details" variant="ghost" size="large" leadingIcon={ChevronLeft} className="self-start">
-            Back to details
-          </Button>
 
           <div className="max-w-prose">
             <PayHelp />

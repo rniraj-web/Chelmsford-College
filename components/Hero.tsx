@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "./Button";
+import { SearchBar } from "./SearchBar";
 import { HeroStats } from "./HeroStats";
 import type { Event } from "@/lib/events";
 
@@ -8,8 +9,6 @@ interface HeroCopyProps {
   title: string;
   titleAccent?: string;
   children: React.ReactNode;
-  ctaHref: string;
-  ctaLabel: string;
   secondaryCtaHref?: string;
   secondaryCtaLabel?: string;
 }
@@ -19,8 +18,6 @@ function HeroCopy({
   title,
   titleAccent,
   children,
-  ctaHref,
-  ctaLabel,
   secondaryCtaHref,
   secondaryCtaLabel,
 }: HeroCopyProps) {
@@ -32,21 +29,17 @@ function HeroCopy({
         {titleAccent ? <span className="block">{titleAccent}</span> : null}
       </h1>
       <p className="type-body-m text-fg-inverse lg:type-body-xl">{children}</p>
-      <div className="flex flex-wrap gap-3">
-        <Button href={ctaHref} variant="accent" size="large">
-          {ctaLabel}
+      <SearchBar size="hero" />
+      {secondaryCtaHref && secondaryCtaLabel ? (
+        <Button
+          href={secondaryCtaHref}
+          variant="inverse"
+          size="large"
+          className="hidden self-start lg:inline-flex"
+        >
+          {secondaryCtaLabel}
         </Button>
-        {secondaryCtaHref && secondaryCtaLabel ? (
-          <Button
-            href={secondaryCtaHref}
-            variant="inverse"
-            size="large"
-            className="hidden lg:inline-flex"
-          >
-            {secondaryCtaLabel}
-          </Button>
-        ) : null}
-      </div>
+      ) : null}
     </div>
   );
 }
@@ -57,8 +50,6 @@ export function Hero({
   title,
   titleAccent,
   children,
-  ctaHref,
-  ctaLabel,
   secondaryCtaHref,
   secondaryCtaLabel,
   latestEvent,
@@ -71,8 +62,6 @@ export function Hero({
     title,
     titleAccent,
     children,
-    ctaHref,
-    ctaLabel,
     secondaryCtaHref,
     secondaryCtaLabel,
   };

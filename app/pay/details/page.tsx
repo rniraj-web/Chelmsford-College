@@ -188,9 +188,6 @@ export default function PayDetailsPage() {
               <Button type="submit" variant="primary" size="large">
                 Continue to review
               </Button>
-              <Button href="/pay" variant="ghost" size="large">
-                Back
-              </Button>
             </div>
           </form>
 

@@ -36,8 +36,6 @@ export default function Home() {
         eyebrow="Chelmsford College"
         title="Build the career"
         titleAccent="you want"
-        ctaHref="/courses"
-        ctaLabel="Search courses"
         secondaryCtaHref="/events"
         secondaryCtaLabel="Book an open event"
         latestEvent={events[0]}

@@ -66,7 +66,7 @@ const publishedCourses = allCourses.filter((course) => course.published);
 export const PLACEHOLDER_CAMPUS = "Princes Road campus";
 export const PLACEHOLDER_AGE_GROUP = "All ages";
 
-function slugify(value: string) {
+export function slugify(value: string) {
   return value
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")

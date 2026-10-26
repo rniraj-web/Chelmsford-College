@@ -29,13 +29,13 @@ export function KeyFactsPanel({
   downloadHref: string;
 }) {
   return (
-    <div className="rounded-lg bg-brand-subtle p-5 lg:sticky lg:top-24 lg:bg-surface lg:p-6 lg:shadow-sm">
+    <div className="rounded-lg bg-brand-subtle p-5 lg:bg-surface lg:p-6 lg:shadow-sm">
       <div className="grid grid-cols-2 gap-5 lg:grid-cols-1 lg:gap-4">
         {facts.map((fact) => (
           <KeyFact key={fact.label} {...fact} />
         ))}
       </div>
-      <div className="mt-5 hidden flex-col gap-3 lg:mt-6 lg:flex">
+      <div className="mt-5 flex flex-col gap-3 lg:mt-6">
         <Button href={applyHref} variant="primary" size="large" className="w-full">
           Apply now
         </Button>

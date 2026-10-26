@@ -10,7 +10,7 @@ export function StickyApplyBar({
   applyHref: string;
 }) {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-30 flex items-center justify-between gap-4 border-t border-line-subtle bg-surface p-4 shadow-lg lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-30 flex items-center justify-between gap-4 border-t border-line-subtle bg-surface p-4 shadow-lg md:hidden">
       <div className="min-w-0">
         <p className="type-body-s-strong truncate text-fg">{title}</p>
         <p className="type-body-s truncate text-fg-secondary">{subtitle}</p>
