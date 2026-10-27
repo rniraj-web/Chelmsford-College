@@ -13,7 +13,7 @@ Added while building navigation (Phase 1):
 Added while building the component library + `/styleguide` (Phase 2):
 
 - **NewsCard has no real data source** — resolved in Phase 4: the college supplied 3 real news items (`data/news.json`), now shown on the homepage via `lib/news.ts`. The `/styleguide` example still uses `public/images/news-awards.jpg` with invented copy, since that page is for component demos, not live content.
-- **VideoPlayer example uses a generic YouTube placeholder ID** (`aqz-KE-bpKQ`, a public-domain test clip) on the styleguide page — no real college video was supplied.
+- **VideoPlayer example uses a generic YouTube placeholder ID** (`aqz-KE-bpKQ`, a public-domain test clip) on the styleguide page — no real college video was supplied. The homepage's own video (`MmUFKbYLKP4`) is a real, published Chelmsford College video, confirmed via YouTube's public data (title, channel) and has auto-generated English captions available through the player's own CC control. No transcript was supplied for it, so the "Transcript" link is omitted there rather than pointing somewhere fake — `components/VideoPlayer.tsx`'s `transcriptHref` is optional for this reason.
 - **PaymentTypeCard / OrderSummary / PaymentConfirmation example values** on `/styleguide` (student ID, reference, amounts) are illustrative only, reusing the already-documented "Alex Smith" demo learner.
 
 Added while building the homepage + `/courses` search (Phase 3):
@@ -38,3 +38,15 @@ Added while building the course detail page (Phase 7):
 
 - **"Apply now" / "Download course guide" / "Book an open event" links** on `app/courses/[slug]/page.tsx` (`KeyFactsPanel`, `StickyApplyBar`, and the inline button) all point to `#` — the college hasn't supplied an application system, course guide downloads, or an events-specific landing page for this CTA. "Book an open event" currently links to `/events` as the closest real destination.
 - **Related courses** (same page) are filtered by `derived.subject`, which `docs/data.md` already flags as an assumed grouping of `sectionId`, not a college-confirmed taxonomy — confirm subject names with the college before launch.
+
+Added while fixing event booking (Phase 8):
+
+- **"Book your place"** (`components/BookEventButton.tsx`) is a simulated prototype interaction — every event's `bookingUrl` is `null` (per `data/events.json`), so clicking it swaps to an inline "You're booked in" confirmation rather than linking anywhere real. No booking is recorded, no email is sent. If the college later supplies a real booking URL per event, the component already prefers that over the simulation.
+
+Added while building course comparison (Phase 9, Appendix 4 feature):
+
+- **`/courses/compare`** — select up to 3 courses from the search results and compare qualification level, duration, campus and entry requirements. The "Campus" row reuses the same single-bucket `PLACEHOLDER_CAMPUS` value already documented above (no real campus field in the data), so it reads the same for every course for now.
+
+Added while building reusable CMS campaign sections (Phase 10, Appendix 4 feature):
+
+- **`data/campaigns.json`** is sample content standing in for what a College marketing editor would manage through the CMS admin — add, edit, reorder, or switch `active` off, with zero code changes (`lib/campaigns.ts` → `getActiveCampaigns()` just filters on that flag). The "September 2027 enrolment" entry is deliberately set to `active: false` to demonstrate that toggle — it won't render anywhere until switched on. Replace all three with the college's real campaign content before launch.

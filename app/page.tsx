@@ -2,6 +2,7 @@ import { Calendar, GraduationCap } from "lucide-react";
 import { getCourses, getFacets } from "@/lib/courses";
 import { getEvents } from "@/lib/events";
 import { getNews, formatNewsDate } from "@/lib/news";
+import { getActiveCampaigns } from "@/lib/campaigns";
 import { Hero } from "@/components/Hero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SubjectTile } from "@/components/SubjectTile";
@@ -21,6 +22,7 @@ export default function Home() {
   const events = getEvents().slice(0, 4);
   const featuredCourses = courses.slice(0, 3);
   const news = getNews().slice(0, 3);
+  const campaigns = getActiveCampaigns();
 
   const subjects = facets.subject.map((subject) => ({
     ...subject,
@@ -86,19 +88,23 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <section className="section-y">
-        <Reveal className="container-page">
-          <CampaignBanner
-            image="/images/group-of-learners.jpg"
-            title="Adult learning at Chelmsford College"
-            ctaHref="/courses?mode=adult-learning"
-            ctaLabel="Explore adult courses"
-          >
-            Flexible part-time and full-time courses designed around work and
-            family life.
-          </CampaignBanner>
-        </Reveal>
-      </section>
+      {campaigns.length > 0 ? (
+        <section className="section-y flex flex-col gap-gutter">
+          {campaigns.map((campaign) => (
+            <Reveal key={campaign.id} className="container-page">
+              <CampaignBanner
+                tone={campaign.tone}
+                image={campaign.image}
+                title={campaign.title}
+                ctaHref={campaign.ctaHref}
+                ctaLabel={campaign.ctaLabel}
+              >
+                {campaign.body}
+              </CampaignBanner>
+            </Reveal>
+          ))}
+        </section>
+      ) : null}
 
       <section className="section-y bg-surface-subtle">
         <Reveal className="container-page">
@@ -119,8 +125,7 @@ export default function Home() {
             poster="/images/students-learning.jpg"
             youtubeId="MmUFKbYLKP4"
             duration="2:14"
-            // caption="Placeholder video  replace with real college footage"
-            transcriptHref="#"
+            caption="Welcome to Chelmsford College | Real Student Stories & College Life"
           />
           <Testimonial
             quote="Studying here gave me the confidence and skills to start my career."

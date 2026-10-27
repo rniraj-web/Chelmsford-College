@@ -8,6 +8,8 @@ import { Button } from "@/components/Button";
 import { FilterFieldsets, type SelectedFacets } from "@/components/FilterFieldsets";
 import { FiltersDrawer } from "@/components/FiltersDrawer";
 import { CourseCard } from "@/components/CourseCard";
+import { CompareCheckbox } from "@/components/CompareCheckbox";
+import { CompareBar } from "@/components/CompareBar";
 import { Pagination } from "@/components/Pagination";
 import { LiveResultCount } from "@/components/LiveResultCount";
 import { Reveal } from "@/components/Reveal";
@@ -83,7 +85,7 @@ export default async function CoursesPage({
   }
 
   return (
-    <div className="container-page section-y flex flex-col gap-6">
+    <div className="container-page section-y flex flex-col gap-6 pb-24">
       <Breadcrumbs items={[{ href: "/", label: "Home" }, { href: "/courses", label: "Find a course" }]} />
       <h1 className="type-h1 text-fg">Find a course</h1>
       <SearchBar size="compact" defaultValue={q} action="/courses" className="lg:max-w-prose" />
@@ -155,7 +157,10 @@ export default async function CoursesPage({
           {results.length > 0 ? (
             <Reveal className="mt-4 flex flex-col gap-4">
               {results.map((course) => (
-                <CourseCard key={course.id} course={course} layout="horizontal" />
+                <div key={course.id} className="flex flex-col gap-2">
+                  <CourseCard course={course} layout="horizontal" />
+                  <CompareCheckbox courseId={course.id} courseTitle={course.title} />
+                </div>
               ))}
             </Reveal>
           ) : (
@@ -177,6 +182,8 @@ export default async function CoursesPage({
           </div>
         </div>
       </div>
+
+      <CompareBar />
     </div>
   );
 }

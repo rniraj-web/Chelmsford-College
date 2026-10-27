@@ -9,14 +9,14 @@ export function VideoPlayer({
   poster,
   youtubeId,
   duration,
-  // caption,
+  caption,
   transcriptHref,
 }: {
   poster: string;
   youtubeId: string;
   duration?: string;
-  // caption: string;
-  transcriptHref: string;
+  caption: string;
+  transcriptHref?: string;
 }) {
   const [playing, setPlaying] = useState(false);
 
@@ -26,7 +26,7 @@ export function VideoPlayer({
         {playing ? (
           <iframe
             src={`https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1`}
-            // title={caption}
+            title={caption}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="absolute inset-0 size-full"
@@ -49,7 +49,7 @@ export function VideoPlayer({
             <button
               type="button"
               onClick={() => setPlaying(true)}
-              aria-label="Play video"
+              aria-label={`Play video: ${caption}`}
               className="absolute left-1/2 top-1/2 flex size-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-surface text-fg-brand shadow-lg transition-colors duration-120 ease-standard hover:bg-brand-subtle focus-visible:focus-ring"
             >
               <Play className="size-8" aria-hidden="true" />
@@ -57,14 +57,16 @@ export function VideoPlayer({
           </>
         )}
       </div>
-      <figcaption className="type-body-s mt-3 flex items-center justify-between text-fg-secondary">
-        {/* <span>{caption}</span> */}
-        <Link
-          href={transcriptHref}
-          className="type-link-s text-fg-link focus-visible:focus-highlight"
-        >
-          Transcript
-        </Link>
+      <figcaption className="type-body-s mt-3 flex items-center justify-between gap-4 text-fg-secondary">
+        <span>{caption}</span>
+        {transcriptHref ? (
+          <Link
+            href={transcriptHref}
+            className="type-link-s shrink-0 text-fg-link focus-visible:focus-highlight"
+          >
+            Transcript
+          </Link>
+        ) : null}
       </figcaption>
     </figure>
   );

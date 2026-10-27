@@ -19,8 +19,7 @@ import { imageFocalPoint } from "@/lib/images";
 import { sanitizeCourseHtml } from "@/lib/sanitizeHtml";
 import {
   getCourseById,
-  getCourses,
-  slugify,
+  getRelatedCourses,
   PLACEHOLDER_CAMPUS,
 } from "@/lib/courses";
 
@@ -120,11 +119,7 @@ export default async function CoursePage({
     },
   ].filter(Boolean) as AccordionItemData[];
 
-  const relatedCourses = getCourses({
-    subject: [slugify(course.derived.subject)],
-  })
-    .filter((c) => c.id !== course.id)
-    .slice(0, 3);
+  const relatedCourses = getRelatedCourses(course, 3);
 
   return (
     <div className="container-page section-y flex flex-col gap-8 pb-28 md:pb-8">

@@ -10,9 +10,9 @@ import { useFocusTrap } from "@/lib/useFocusTrap";
 
 const NAV_ITEMS = [
   { href: "/courses", label: "Courses" },
-  { href: "/courses?mode=apprenticeships", label: "Apprenticeships" },
-  { href: "/courses?mode=adult-learning", label: "Adult learning" },
-  { href: "/courses?level=university-level", label: "University level" },
+  { href: "/courses", label: "Apprenticeships" },
+  { href: "/courses", label: "Adult learning" },
+  { href: "/courses", label: "University level" },
   { href: "/events", label: "Events" },
   { href: "#", label: "About us" },
 ];

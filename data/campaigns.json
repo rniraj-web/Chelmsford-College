@@ -1,0 +1,38 @@
+{
+  "$meta": {
+    "status": "SAMPLE",
+    "note": "Example campaign content for the reusable CampaignBanner section — this is the kind of content a College marketing editor would manage through the CMS admin (add, edit, reorder, or switch 'active' off) without a developer touching code. Replace with the college's real campaigns before launch."
+  },
+  "campaigns": [
+    {
+      "id": "adult-learning",
+      "active": true,
+      "tone": "brand",
+      "title": "Adult learning at Chelmsford College",
+      "body": "Flexible part-time and full-time courses designed around work and family life.",
+      "image": "/images/group-of-learners.jpg",
+      "ctaLabel": "Explore courses",
+      "ctaHref": "/courses"
+    },
+    {
+      "id": "open-evening-december-2026",
+      "active": true,
+      "tone": "accent",
+      "title": "Join us at our next Open Evening",
+      "body": "Tour our campus, meet tutors and current learners, and get advice on courses and funding.",
+      "image": "/images/moulsham-street.avif",
+      "ctaLabel": "Book your place",
+      "ctaHref": "/events/open-evening-december-2026"
+    },
+    {
+      "id": "september-2027-enrolment",
+      "active": false,
+      "tone": "brand",
+      "title": "September 2027 enrolment is open",
+      "body": "Apply now to secure your place for the new academic year.",
+      "image": "/images/students-learning.jpg",
+      "ctaLabel": "Search courses",
+      "ctaHref": "/courses"
+    }
+  ]
+}

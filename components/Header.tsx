@@ -23,9 +23,9 @@ const UTILITY_RIGHT = [
 
 const MAIN_NAV = [
   { href: "/courses", label: "Courses", dropdown: true },
-  { href: "/courses?mode=apprenticeships", label: "Apprenticeships", dropdown: false },
-  { href: "/courses?mode=adult-learning", label: "Adult learning", dropdown: false },
-  { href: "/courses?level=university-level", label: "University level", dropdown: false, hideAtLg: true },
+  { href: "/courses", label: "Apprenticeships", dropdown: false },
+  { href: "/courses", label: "Adult learning", dropdown: false },
+  { href: "/courses", label: "University level", dropdown: false, hideAtLg: true },
   { href: "/events", label: "Events", dropdown: false },
   { href: "#", label: "About us", dropdown: true },
 ];

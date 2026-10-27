@@ -65,9 +65,9 @@ export function CourseCard({
         </div>
         <div className="mt-auto flex flex-col gap-2 border-t border-line-subtle pt-4">
           {course.derived.feesText ? (
-            <Badge emphasis="subtle" tone="neutral" className="self-start">
+            <p className="type-body-s whitespace-pre-line rounded-md bg-surface-muted px-3 py-2 text-fg-secondary">
               {course.derived.feesText}
-            </Badge>
+            </p>
           ) : null}
           <span className="type-link-s self-end text-fg-link">View course →</span>
         </div>

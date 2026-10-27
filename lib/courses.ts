@@ -109,6 +109,25 @@ export function getCourseById(id: number): Course | undefined {
   return publishedCourses.find((course) => course.id === id);
 }
 
+// Rule-based recommendations: same subject counts for more than same level,
+// so a course only sharing a level still surfaces below a same-subject match.
+// Courses matching neither are left out rather than padding the list.
+export function getRelatedCourses(course: Course, limit = 3): Course[] {
+  const scored = publishedCourses
+    .filter((other) => other.id !== course.id)
+    .map((other) => {
+      let score = 0;
+      if (other.derived.subject === course.derived.subject) score += 2;
+      if (other.derived.level === course.derived.level) score += 1;
+      return { course: other, score };
+    })
+    .filter((entry) => entry.score > 0);
+
+  scored.sort((a, b) => b.score - a.score || a.course.title.localeCompare(b.course.title));
+
+  return scored.slice(0, limit).map((entry) => entry.course);
+}
+
 export interface Facet {
   value: string;
   label: string;

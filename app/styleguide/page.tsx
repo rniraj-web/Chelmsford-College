@@ -335,6 +335,7 @@ export default function StyleguidePage() {
             poster="/images/students-learning.jpg"
             youtubeId="aqz-KE-bpKQ"
             duration="2:14"
+            caption="Example video caption"
             transcriptHref="#"
           />
           <div className="grid gap-6 lg:grid-cols-2">

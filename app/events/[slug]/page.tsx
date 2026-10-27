@@ -10,7 +10,8 @@ import {
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Badge } from "@/components/Badge";
-import { Button, button } from "@/components/Button";
+import { button } from "@/components/Button";
+import { BookEventButton } from "@/components/BookEventButton";
 import { KeyFact } from "@/components/KeyFactsPanel";
 import { Alert } from "@/components/Alert";
 import { EventCard, EVENT_BADGE_TONE_MAP } from "@/components/EventCard";
@@ -120,14 +121,8 @@ export default async function EventPage({
             <KeyFact icon={Users} label="Who it's for" value={event.audience} />
           </div>
 
-          <div className="flex flex-wrap gap-3">
-            <Button
-              href={event.bookingUrl ?? "#"}
-              variant="primary"
-              size="large"
-            >
-              Book your place
-            </Button>
+          <div className="flex flex-wrap items-start gap-3">
+            <BookEventButton bookingUrl={event.bookingUrl} eventTitle={event.title} />
             <a
               href={buildIcsHref(event)}
               download={`${event.slug}.ics`}
